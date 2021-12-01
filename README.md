@@ -1,1 +1,3 @@
 # AdventOfCode
+
+krótki opis
