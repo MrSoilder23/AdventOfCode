@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static int horizontal;
+    static int depth;
+    static int finalValue;
+    static String directions;
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (!(directions = scanner.nextLine()).isEmpty()) {
+
+            System.out.println(directions);
+
+            if (directions.contains("forward")) {
+                directions = directions.replaceAll("[^\\d.]", "");
+
+                int a = Integer.parseInt(directions);
+
+                horizontal += a;
+            }
+
+            if (directions.contains("down")) {
+                directions = directions.replaceAll("[^\\d.]", "");
+
+                int a = Integer.parseInt(directions);
+                //System.out.println("+" + a);
+                depth += a;
+            }
+            if (directions.contains("up")) {
+                directions = directions.replaceAll("[^\\d.]", "");
+
+                int a = Integer.parseInt(directions);
+                //System.out.println("-" + a);
+                depth -= a;
+            }
+
+        }
+
+        System.out.println("depth: " + depth);
+        System.out.println("horizontal: " + horizontal);
+
+        finalValue = depth * horizontal;
+
+        System.out.println("FinalValue: " + finalValue);
+
+    }
+}
